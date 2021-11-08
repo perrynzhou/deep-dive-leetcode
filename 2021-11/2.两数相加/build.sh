@@ -1,0 +1,1 @@
+gcc -g -std=gnu11 main.c -o test

@@ -10,9 +10,17 @@ func subsets(nums []int) [][]int {
       if i>count {
         break
       }
-
-      for j:=i+1;j<=count;j++ {
-        result=append(result,nums[i:j])
+      for j := i+1;j<=count;j++ {
+          var tmpSub []int
+          tmpSub = append(tmpSub,nums[i:j]...)
+          fmt.Println("tmpSub=",tmpSub)
+          for _,v :=range nums[j:] {
+              var tmp []int
+              tmp = append(tmp,tmpSub...)
+              tmp=append(tmp,v)
+              fmt.Println("tmp=",tmp)
+              result=append(result,tmp)
+          }
       }
       i++
    }

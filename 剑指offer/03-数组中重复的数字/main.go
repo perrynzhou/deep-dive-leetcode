@@ -38,6 +38,19 @@ func findRepeatNumber_v2(nums []int) int {
 	}
 	return -1
 }
+func findRepeatNumber_v3(nums []int) int {
+	count := make(map[int]int)
+	repeat :=0
+	for _,v := range nums {
+		count[v]++
+		if count[v] > 1 {
+			repeat = v
+			break
+		}
+	}
+	return repeat
+
+}
 func main() {
 	fmt.Println(findRepeatNumber_v1([]int{2, 3, 1, 0, 2, 5, 3}))
 	fmt.Println(findRepeatNumber_v2([]int{2, 3, 1, 0, 8, 5, 3}))
